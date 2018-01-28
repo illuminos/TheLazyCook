@@ -1,0 +1,11 @@
+<div>
+	<p>New user? Sign up here</p>
+	<form (ngSubmit)="signup()" #signupForm="ngForm">
+	<input id="email" type="text" name="email" [(ngModel)]="signupAttempt.email" required>
+	<input type="password" name="password" [(ngModel)]="signupAttempt.password" required>
+	<button [disabled]="!signupForm.form.valid" type="button" (click)="signup()">signup</button>
+	<ng-container *ngIf="shouldShowMessage">
+		{{message}}
+	</ng-container>
+	</form>
+</div>
