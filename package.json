@@ -1,6 +1,7 @@
 {
   "name": "the-lazy-cook",
   "version": "0.0.0",
+  "description": "A webapp that allows people to find recipies based on the ingridients they have.",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
