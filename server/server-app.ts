@@ -131,15 +131,25 @@ class ServerApp{
 			}
 		});
 
-
-
-
 	}
-
 
 	start():void {
-		// TODO
+		//normalize ports by environment variables        
+		let port=process.env.PORT_SANITY||3000;
+	
+		// http.createServer(express).listen(port);
+		this.app.listen(port,()=>{
+			winston.info("Server started on port "+port);
+		})
 	}
+
+	private _homePage(req: express.Request, res: express.Response) {
+
+		let pathToIndexPage:string;
+		pathToIndexPage=path.join(__dirname,'../','dist/','index.html'); //amongst the main folders
+		winston.log('info',"Server refreshed index file: "+pathToIndexPage);
+        res.sendFile(pathToIndexPage);
+    }
 }
 
 
