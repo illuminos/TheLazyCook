@@ -6,11 +6,15 @@ import orientjs = require('orientjs');
 import winston = require('winston');
 import bodyParser = require('body-parser');
 import session = require('express-session');
+import { UserBackend } from './user.backend';
+import { SchemaBackend } from './schema.backend';
 
 class ServerApp{
 
 	private app: express.Application;
 	private db:orientjs.Db;
+	private userBackend:UserBackend;
+	private developerFeatures:SchemaBackend;
 
 	setRoutes():void {
 		

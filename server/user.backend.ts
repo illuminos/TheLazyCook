@@ -1,13 +1,13 @@
 import ojs= require('orientjs');
 import winston=require('winston');
 import Promise=require('bluebird');
-import { FileSystemBackend } from './filesystem.backend';
+// import { FileSystemBackend } from './filesystem.backend';
 
 // TODO remove file system dependency
 
 export class UserBackend{
 
-	constructor(private db:ojs.Db,private fileSystemBackend:FileSystemBackend){
+	constructor(private db:ojs.Db){
 	}
 
 	checkAndCreateNewUser(user:any):Promise<number>{
@@ -17,10 +17,11 @@ export class UserBackend{
 			if(records.length>0){
 				return 2;//Email already taken
 			}else{
-				return this.fileSystemBackend.createFilesystem().
-				then((r:ojs.Record)=>{
-					return this.insertNewUser(user,r);
-				})
+				return this.insertNewUser(user);
+				// return this.fileSystemBackend.createFilesystem().
+				// then((r:ojs.Record)=>{
+				// 	return this.insertNewUser(user,r);
+				// })
 			}
 		}).catch((error:Error)=>{
 			winston.error("Users retrieval : "+error.message);
@@ -28,15 +29,14 @@ export class UserBackend{
 		})
 	}
 
-	private insertNewUser(user:any,fileSystem:any):Promise<number>{
+	private insertNewUser(user:any):Promise<number>{
  		return this.db.insert().into('User').set({
 			firstName:user.firstName,
 			lastName:user.lastName,
 			email:user.email,
 			password:user.password,
 			gender:user.gender==undefined?'undisclosed':user.gender,
-			dateOfBirth:user.dateOfBirth,
-			fileSystem:fileSystem['@rid']
+			dateOfBirth:user.dateOfBirth
 		}).one().then(()=>{
 			return 0;//success
 		}).catch((error:Error)=>{
