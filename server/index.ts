@@ -1,5 +1,5 @@
-// import {ServerApp} from './server-app'
-// import ServerApp
+import {ServerApp} from './server-app';
+// import ServerApp;
 
 import winston=require('winston');
 require('dotenv').config();

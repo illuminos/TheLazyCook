@@ -8,8 +8,9 @@ import bodyParser = require('body-parser');
 import session = require('express-session');
 import { UserBackend } from './user.backend';
 import { SchemaBackend } from './schema.backend';
+import { AuthenticationResult,statusCodeForLogin,statusCodeForSignup } from './user.backend';
 
-class ServerApp{
+export class ServerApp{
 
 	private app: express.Application;
 	private db:orientjs.Db;
