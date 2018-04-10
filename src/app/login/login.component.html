@@ -1,7 +1,7 @@
 <h1>Login</h1>
 <form (ngSubmit)="login()" #loginForm="ngForm">
-	<input id="email" type="text" name="email" [(ngModel)]="attempt.email" required>
-	<input type="password" name="password" [(ngModel)]="attempt.password" required>
+	<input id="email" placeholder="Email" type="text" name="email" [(ngModel)]="attempt.email" required>
+	<input type="password" placeholder="Password" name="password" [(ngModel)]="attempt.password" required>
 	<button [disabled]="!loginForm.form.valid" type="button" (click)="login()">Login</button>
 	<ng-container *ngIf="shouldShowMessage">
 		{{message}}

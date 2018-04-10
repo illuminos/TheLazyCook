@@ -12,5 +12,6 @@ export class LoginAttempt{
 export class Signup{//almost like user model but slightly different
 	username:string;
 	password:string;
+	retypedPassword:string;
 	email:string;
 }
