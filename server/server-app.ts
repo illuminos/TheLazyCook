@@ -37,7 +37,7 @@ export class ServerApp{
 		this.app.use('/', express.static(path.join(__dirname, '../', 'dist')));//for one level
 
 		//all other routes are handled by angular
-		this.app.get('/*', this._homePage);//this should be in the end
+		this.app.get('/*', this.homePage);//this should be in the end
 
 	}
 
@@ -149,7 +149,7 @@ export class ServerApp{
 		})
 	}
 
-	private _homePage(req: express.Request, res: express.Response) {
+	private homePage(req: express.Request, res: express.Response) {
 
 		let pathToIndexPage:string;
 		pathToIndexPage=path.join(__dirname,'../','dist/','index.html'); //amongst the main folders
