@@ -1,5 +1,6 @@
 <div class="center">
-	<p>New user? Sign up here</p>
+	<h1>New user?</h1>
+	<h1>Sign up here</h1>
 	<form (ngSubmit)="signup()" #signupForm="ngForm">
 	<input id="emailSignup" class="center" placeholder="Username" type="text" name="email" [(ngModel)]="signupAttempt.email" required>
 	<input type="password" class="center" placeholder="Password" name="password" [(ngModel)]="signupAttempt.password" required>
