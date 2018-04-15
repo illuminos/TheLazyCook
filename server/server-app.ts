@@ -9,6 +9,7 @@ import session = require('express-session');
 import { UserBackend } from './user.backend';
 import { SchemaBackend } from './schema.backend';
 import { AuthenticationResult,statusCodeForLogin,statusCodeForSignup } from './user.backend';
+import * as multer from 'multer';
 const uploader=multer({dest: "./uploads/"}).any();
 
 export class ServerApp{
