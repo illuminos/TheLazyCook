@@ -19,6 +19,15 @@ export class ServerApp{
 	private userBackend:UserBackend;
 	private developerFeatures:SchemaBackend;
 
+	constructor() {
+		this.app = express();
+	}
+
+	// constructor(db?:orientjs.Db) {
+	// 	this.app = express();
+	// 	this.db=db;
+	// }
+
 	setRoutes():void {
 		
 		this.app.use(bodyParser.json());
@@ -153,7 +162,7 @@ export class ServerApp{
 	private homePage(req: express.Request, res: express.Response) {
 
 		let pathToIndexPage:string;
-		pathToIndexPage=path.join(__dirname,'../','dist/','index.html'); //amongst the main folders
+		pathToIndexPage=path.join(__dirname,'../','src/','index.html'); //amongst the main folders
 		winston.log('info',"Server refreshed index file: "+pathToIndexPage);
         res.sendFile(pathToIndexPage);
     }
