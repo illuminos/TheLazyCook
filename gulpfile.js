@@ -11,8 +11,7 @@ var paths = {
 			src: ['./server/**/*.ts'],
 			config:'./server/tsconfig.json',
 			rootTypescriptDir:'./server',
-			outputJavascriptDir:'./server',
-			relativeSourcemaps:'./sourcemaps'//not used, sourcemaps are embedded
+			outputJavascriptDir:'./server'
 	  }
   }
 };
