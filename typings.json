@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "bluebird": "registry:dt/bluebird#3.5.0+20170323165310",
+    "winston": "registry:dt/winston#2.3.0+20170323124512"
+  }
+}
