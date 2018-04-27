@@ -2,5 +2,8 @@
   "dependencies": {
     "bluebird": "registry:dt/bluebird#3.5.0+20170323165310",
     "winston": "registry:dt/winston#2.3.0+20170323124512"
+  },
+  "globalDependencies": {
+    "orientjs": "registry:dt/orientjs#2.1.0+20161130235936"
   }
 }
