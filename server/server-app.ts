@@ -19,14 +19,14 @@ export class ServerApp{
 	private userBackend:UserBackend;
 	private developerFeatures:SchemaBackend;
 
-	constructor() {
-		this.app = express();
-	}
-
-	// constructor(db?:orientjs.Db) {
+	// constructor() {
 	// 	this.app = express();
-	// 	this.db=db;
 	// }
+
+	constructor(db?:orientjs.Db) {
+		this.app = express();
+		this.db=db;
+	}
 
 	setRoutes():void {
 		
