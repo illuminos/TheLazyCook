@@ -8,14 +8,7 @@ winston.level='debug';
 
 winston.info("Initializing Server");
 
-//start the server (the db field of the server will be empty)
-// winston.info("Starting server without a database");
-// let server=new ServerApp();
-// server.setRoutes();
-// server.start();
-
-
-let iWantToUseADatabase=true;
+let iWantToUseADatabase=false;
 
 if(iWantToUseADatabase){//configure and setup OrientDB database before launching the server
 	let databaseOptions=new DatabaseOptions();//<--there are a total of 7 properties
