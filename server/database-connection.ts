@@ -2,6 +2,7 @@ import orientjs= require('orientjs');
 import winston=require('winston');
 import Promise=require('bluebird');
 
+/** Simple Orient JS Database configuration structure used in bootstrap */
 export class DatabaseOptions{
 	host:string;
 	port:number; 
@@ -51,6 +52,7 @@ export function connectToDatabase(option:any):Promise<orientjs.Db>{
 	return searchForDatabaseOrCreateOneIfNeeded(databaseServer,option);
 }
 
+/** Looks up and loads specific database in a server or creates one if not found */
 function searchForDatabaseOrCreateOneIfNeeded(server:orientjs.Server,option:DatabaseOptions):Promise<orientjs.Db>{
 	//find the database on server
 	return server.list().
