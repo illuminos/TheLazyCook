@@ -8,6 +8,7 @@ winston.level='debug';
 
 winston.info("Initializing Server");
 
+// Suggests as to weather you want to use orient js DB or not
 let iWantToUseADatabase=false;
 
 if(iWantToUseADatabase){//configure and setup OrientDB database before launching the server

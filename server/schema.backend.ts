@@ -10,6 +10,7 @@ const FOLDER="Folder";
 const FILESYSTEM="FileSystem";
 const LOCATION="Location";
 
+/** Service class for holding all methods relatedd to database tables */
 export class SchemaBackend{
 
 	constructor(private db:ojs.Db){
