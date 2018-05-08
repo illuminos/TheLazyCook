@@ -5,4 +5,5 @@ export class Recipie{
 	preparationTime:number;
 	cookingTime:number;
 	ingridents:Ingridient[];
+	cook:string;
 }
